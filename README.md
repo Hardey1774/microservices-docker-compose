@@ -23,3 +23,6 @@ To run the application, navigate to the root directory of the project and execut
 
 ```sh
 docker-compose up --build
+=======
+# microservices-docker-compose
+e3d9a65 (Initial commit)
