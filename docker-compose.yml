@@ -1,0 +1,61 @@
+version: '3.8'
+
+services:
+  springapp:
+    build: ./springapp
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mongo
+    environment:
+      SPRING_DATA_MONGODB_URI: mongodb://mongo:27017/demo
+
+  registration:
+    build: ./registration
+    ports:
+      - "8081:8081"
+    depends_on:
+      - mongo
+    environment:
+      SPRING_DATA_MONGODB_URI: mongodb://mongo:27017/demo
+
+  login:
+    build: ./login
+    ports:
+      - "8082:8082"
+    depends_on:
+      - mongo
+    environment:
+      SPRING_DATA_MONGODB_URI: mongodb://mongo:27017/demo
+
+  cart:
+    build: ./cart
+    ports:
+      - "8083:8083"
+    depends_on:
+      - mongo
+    environment:
+      SPRING_DATA_MONGODB_URI: mongodb://mongo:27017/demo
+
+  payment:
+    build: ./payment
+    ports:
+      - "8084:8084"
+    depends_on:
+      - mongo
+    environment:
+      SPRING_DATA_MONGODB_URI: mongodb://mongo:27017/demo
+
+  order:
+    build: ./order
+    ports:
+      - "8085:8085"
+    depends_on:
+      - mongo
+    environment:
+      SPRING_DATA_MONGODB_URI: mongodb://mongo:27017/demo
+
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
