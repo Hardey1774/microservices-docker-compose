@@ -8,8 +8,8 @@ public class Order {
     @Id
     private String id;
     private String userId;
-    private List<String> items;
-    private double totalAmount;
+    private String productId;
+    private int quantity;
 
-    // Getters and setters
+    // Constructors, getters, and setters
 }

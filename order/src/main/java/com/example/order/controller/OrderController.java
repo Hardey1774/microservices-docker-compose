@@ -8,18 +8,18 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/order")
+@RequestMapping("/api/orders")
 public class OrderController {
 
     @Autowired
     private OrderRepository orderRepository;
 
     @PostMapping
-    public Order placeOrder(@RequestBody Order order) {
+    public Order createOrder(@RequestBody Order order) {
         return orderRepository.save(order);
     }
 
-    @GetMapping("/{userId}")
+    @GetMapping("/user/{userId}")
     public List<Order> getOrdersByUserId(@PathVariable String userId) {
         return orderRepository.findByUserId(userId);
     }

@@ -1,4 +1,4 @@
 FROM openjdk:11-jdk-slim
 VOLUME /tmp
-COPY target/cart-0.0.1-SNAPSHOT.jar app.jar
+COPY target/cart-1.0-SNAPSHOT.jar app.jar
 ENTRYPOINT ["java","-jar","/app.jar"]
